@@ -1,17 +1,18 @@
 <%- include('../partials/header') %>
 
 <section id="show-page">
-  <div>Name: </div>
-  <div><%= fish.name %></div>
-  <div>Description: </div>
-  <div><%= fish.description %></div>
-  <div>Gallons per Fish:</div>
-  <div><%= fish.galPerFish %></div>
+  <div>Name: <%= fish.name %></div>
+  <div>Description: <%= fish.description %></div>
+  <div>Gallons per Fish: <%= fish.galPerFish %></div>
   <div>Comptabile Fish:</div>
   <ul>
-    <%- fish.comptabile.map(f => 
-      `<li>${f.name} <small>${p.galPerFish}</small></li>`
-    ) %>
+    <% if (fish.compatible.length) { %>
+      <%- fish.comptabile.map(f => 
+        `<li>${f.name} <small>${p.galPerFish}</small></li>`
+      ) %>
+    <% } else { %>
+      <h5>No Compatibility Info Yet</h5>
+    <% } %>
   </ul>
 </section>
 

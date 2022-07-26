@@ -11,8 +11,8 @@
     <thead>
       <tr>
         <th>Fish</th>
-        <th>Release<br>Year</th>
-        <th></th>
+        <th>Description</th>
+        <th>Image:</th>
       </tr>
     </thead>
     <tbody>
@@ -20,6 +20,7 @@
         <tr>
           <td><%= f.name %></td>
           <td><%= f.description %></td>
+          <td></td>
           <td><a href="/fish/<%= f._id %>">DETAILS</a></td>
         </tr>
       <% }); %>

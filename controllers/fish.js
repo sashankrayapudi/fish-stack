@@ -18,12 +18,15 @@ async function show(req, res) {
 }
 
 function create(req, res) {
-  // remove whitespace next to commas
-  req.body.compatible = req.body.compatible.replace(/\s*,\s*/g, ',');
-  // split if it's not an empty string
-  if (req.body.compatible) req.body.compatible = req.body.compatible.split(',');
   for (let key in req.body) {
     if (req.body[key] === '') delete req.body[key];
+  }
+  
+  if (req.body.compatible) {
+    // remove whitespace next to commas
+    req.body.compatible = req.body.compatible.replace(/\s*,\s*/g, ',');
+    // split by comma
+    req.body.compatible = req.body.compatible.split(',');
   }
   var fish = new Fish(req.body);
   fish.save(function(err) {
@@ -46,6 +49,6 @@ async function index(req, res) {
   res.render('fish/index', {
     fish, 
     category: req.query.category,
-    title: `Fish for ${req.query.category.toUpperCase()}`
+    title: `Fish for ${req.query.category}`
   });
 }
