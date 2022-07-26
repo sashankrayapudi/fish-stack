@@ -7,4 +7,25 @@
   <a href="/fish?category=specialty">SPECIALTY</a>
 
 
+  <table id="list">
+    <thead>
+      <tr>
+        <th>Fish</th>
+        <th>Release<br>Year</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% fish.forEach(function(f) { %>
+        <tr>
+          <td><%= f.name %></td>
+          <td><%= f.description %></td>
+          <td><a href="/fish/<%= f._id %>">DETAILS</a></td>
+        </tr>
+      <% }); %>
+     </tbody>
+  </table>
+    
+
+
 <%- include('../partials/footer') %>

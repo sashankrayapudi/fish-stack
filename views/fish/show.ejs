@@ -1,0 +1,18 @@
+<%- include('../partials/header') %>
+
+<section id="show-page">
+  <div>Name: </div>
+  <div><%= fish.name %></div>
+  <div>Description: </div>
+  <div><%= fish.description %></div>
+  <div>Gallons per Fish:</div>
+  <div><%= fish.galPerFish %></div>
+  <div>Comptabile Fish:</div>
+  <ul>
+    <%- fish.comptabile.map(f => 
+      `<li>${f.name} <small>${p.galPerFish}</small></li>`
+    ) %>
+  </ul>
+</section>
+
+<%- include('../partials/footer') %>

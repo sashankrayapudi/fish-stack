@@ -2,16 +2,22 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const fishSchema = new Schema({
-  name: String,
+  name: {
+    type: String,
+    required: true
+  },
   image: String,
   description: String,
   category: {
     type: String,
     enum: ['goldfish-koi', 'community', 'cichlids', 'specialty']
   },
-  compatible: [String],
-  galPerFish: Number,
-  user: {type: Schema.Types.ObjectId, ref: 'User'},
+  compatible: [{type: Schema.Types.ObjectId, ref: 'Fish'}],
+  galPerFish: {
+    type: Number,
+    required: true
+  },
+  userAdding: {type: Schema.Types.ObjectId, ref: 'User'},
   userName: String,
   userAvatar: String
 }, {
