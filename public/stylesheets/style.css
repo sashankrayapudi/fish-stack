@@ -18,3 +18,9 @@ a {
 .login img {
   height: 30px;
 }
+
+
+.fish-image {
+  height: 200px;
+  border-radius: 10px;
+}

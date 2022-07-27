@@ -2,6 +2,7 @@
 
 <section id="show-page">
   <div>Name: <%= fish.name %></div>
+  <img class="fish-image" src="<%= fish.image %>" alt="Image of <%= fish.name %>">
   <div>Description: <%= fish.description %></div>
   <div>Gallons per Fish: <%= fish.galPerFish %></div>
   <div>Comptabile Fish:</div>
@@ -14,6 +15,11 @@
       <h5>No Compatibility Info Yet</h5>
     <% } %>
   </ul>
+  <form action="/aquarium" method="POST">
+    <label>Quantity:</label>
+    <input type="number" name="quantity" min="1"><br>
+    <input type="submit" value="Add to My Aquarium">
+  </form>
 </section>
 
 <%- include('../partials/footer') %>
