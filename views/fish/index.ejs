@@ -1,10 +1,13 @@
 <%- include('../partials/header') %>
 
   <h1><%= title %></h1>
-  <a href="/fish?category=goldfish-koi">GOLDFISH/KOI</a>
-  <a href="/fish?category=community">COMMUNITY</a>
-  <a href="/fish?category=cichlids">CICHLIDS</a>
-  <a href="/fish?category=specialty">SPECIALTY</a>
+  <nav id="categories">
+    <a href="/fish?category=goldfish-koi">GOLDFISH/KOI</a>
+    <a href="/fish?category=community">COMMUNITY</a>
+    <a href="/fish?category=cichlids">CICHLIDS</a>
+    <a href="/fish?category=specialty">SPECIALTY</a>
+  </nav>
+
 
 
   <table id="list">
@@ -12,7 +15,7 @@
       <tr>
         <th>Fish</th>
         <th>Description</th>
-        <th>Image:</th>
+        <th>Image</th>
       </tr>
     </thead>
     <tbody>
@@ -20,7 +23,7 @@
         <tr>
           <td><%= f.name %></td>
           <td><%= f.description %></td>
-          <td></td>
+          <td><img class="fish-image-index" src="<%= f.image %>" alt="Image of <%= f.name %>"></td>
           <td><a href="/fish/<%= f._id %>">DETAILS</a></td>
         </tr>
       <% }); %>

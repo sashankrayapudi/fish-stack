@@ -10,19 +10,14 @@
 <body>
   <header>FISH STACK</header>
   <nav>
-    <!-- <img src="/images/camera.svg"> -->
     <a href="/">HOME</a>&nbsp;&nbsp;&nbsp;&nbsp;
-    <!-- <a>GOLDFISH/KOI</a> |
-    <a>COMMUNITY</a> |
-    <a href="/cichlids">CICHLIDS</a> |
-    <a>SPECIALTY</a>&nbsp;&nbsp;&nbsp;&nbsp; -->
-    <a href="/fish?category=goldfish-koi">ALL FISH</a>
+    <a href="/fish?category=goldfish-koi" <%- title.substring(0,8) === 'Fish for' ? 'class="active"' : '' %>>ALL FISH</a>
     <% if (user) { %>
-      <a href="/fish/new">ADD FISH</a>
+      <a href="/fish/new" <%- title === 'Add New Fish' ? 'class="active"' : '' %>>ADD FISH</a>
       <a>MY AQUARIUM</a>
-      <a href="/logout">LOG OUT</a>
+      <a href="/logout" class="logout">LOG OUT</a>
     <% } else { %>
-      <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+      <a href="/auth/google" class="login">LOG IN&nbsp;</a>
     <% } %>
   </nav>
   

@@ -7,20 +7,91 @@ a {
   color: #00B7FF;
 }
 
+/* body {
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas: 
+    "nav"
+    "main"
+} */
 
-/* .login {
+body > nav {
+  grid-area: nav;
+  background-color: #B8C0C2;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0 20px 0 30px;
+  border-radius: 10px;
+}
+
+.login, .logout {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 34px;
-} */
-
-.login img {
-  height: 30px;
 }
+
+nav > a {
+  margin: 20px;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+
+nav > a:hover:not(.active) {
+  color: white;
+  background-color: #424748;
+}
+
+nav > a.active {
+  color: white;
+  cursor: default;
+}
+
+
+#categories {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+table {
+  font-size: 20px;
+}
+
+table thead th {
+  padding: 10px;
+}
+
+table td {
+  padding: 5px;
+  text-align: center;
+}
+
+table, th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+
+th, td {
+  background-color: #96D4D4;
+  border-radius: 10px;
+}
+
+
+
 
 
 .fish-image {
   height: 200px;
+  border-radius: 10px;
+}
+
+.fish-image-index {
+  height: 150px;
   border-radius: 10px;
 }

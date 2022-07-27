@@ -49,6 +49,6 @@ async function index(req, res) {
   res.render('fish/index', {
     fish, 
     category: req.query.category,
-    title: `Fish for ${req.query.category}`
+    title: `${req.query.category.toUpperCase()}`,
   });
 }
