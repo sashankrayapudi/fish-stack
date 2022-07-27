@@ -64,7 +64,7 @@ async function show(req, res) {
 async function edit(req, res) {
   const fish = await Fish.findOne({_id: req.params.id, userAdded: req.user._id});
   const validCategories = Fish.schema.path('category').enumValues;
-  // if (!fish) return res.redirect('/fish');
+  //if (!fish) return res.redirect('/fish');
   res.render('fish/edit', {fish, title: "Update Fish", validCategories});
 }
 

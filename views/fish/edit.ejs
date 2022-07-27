@@ -4,23 +4,23 @@
 
 <form action="/fish/<%= fish._id %>?_method=PUT" method="POST">
   <label>Name:</label>
-  <input type="text" name="name"><br>
+  <input type="text" name="name" value="<%= fish.name %>"><br>
   <label>Image URL (imgur):</label>
-  <input type="text" name="image"><br>
+  <input type="text" name="image" value="<%= fish.image %>"><br>
   <label>Description:</label>
-  <input type="text" name="description"><br>
+  <input type="text" name="description" value="<%= fish.description %>"><br>
   <label>Tank Type:</label>
   <select name="category">
     <% validCategories.forEach(function(category, idx) { %>
-      <option value="<%= category %>" <%= idx === 0 ? 'selected' : ''%>>
+      <option value="<%= fish.category %>">
           <%= category %>
       </option>
     <% }) %>
   </select><br>
   <label>Comptabile Fish (separate fish with commas):</label>
-  <input type="text" name="comptabile"><br>
+  <input type="text" name="comptabile" value="<%= fish.compatible %>"><br>
   <label>Gallons per Fish:</label>
-  <input type="text" name="galPerFish"><br>
+  <input type="text" name="galPerFish" value="<%= fish.galPerFish %>"><br>
   <input type="submit" value="Update Fish">
 </form>
 
