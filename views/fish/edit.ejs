@@ -1,0 +1,27 @@
+<%- include('../partials/header') %>
+
+<h1><%= title %></h1>
+
+<form action="/fish/<%= fish._id %>?_method=PUT" method="POST">
+  <label>Name:</label>
+  <input type="text" name="name"><br>
+  <label>Image URL (imgur):</label>
+  <input type="text" name="image"><br>
+  <label>Description:</label>
+  <input type="text" name="description"><br>
+  <label>Tank Type:</label>
+  <select name="category">
+    <% validCategories.forEach(function(category, idx) { %>
+      <option value="<%= category %>" <%= idx === 0 ? 'selected' : ''%>>
+          <%= category %>
+      </option>
+    <% }) %>
+  </select><br>
+  <label>Comptabile Fish (separate fish with commas):</label>
+  <input type="text" name="comptabile"><br>
+  <label>Gallons per Fish:</label>
+  <input type="text" name="galPerFish"><br>
+  <input type="submit" value="Update Fish">
+</form>
+
+<%- include('../partials/footer') %>

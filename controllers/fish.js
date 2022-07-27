@@ -5,20 +5,27 @@ module.exports = {
   new: newFish,
   create,
   show,
-  // edit
+  edit
 };
 
 
 
-//function edit(req, res)
-
-async function show(req, res) {
-  const fish = await Fish.findById(req.params.id);
-  res.render('fish/show', {
-    fish,
-    title: `Fish`
+async function index(req, res) {
+  //enum: ['goldfish-koi', 'community', 'cichlids', 'specialty']
+  const fish = await Fish.find({category: req.query.category});
+  res.render('fish/index', {
+    fish, 
+    category: req.query.category,
+    title: `Category: ${req.query.category}`
   });
 };
+
+
+function newFish(req, res) {
+  const validCategories = Fish.schema.path('category').enumValues;
+  res.render('fish/new', {title: 'Add New Fish', validCategories});
+};
+
 
 function create(req, res) {
   for (let key in req.body) {
@@ -45,18 +52,19 @@ function create(req, res) {
 };
 
 
-function newFish(req, res) {
-  const validCategories = Fish.schema.path('category').enumValues;
-  res.render('fish/new', {title: 'Add New Fish', validCategories});
-};
-
-
-async function index(req, res) {
-  //enum: ['goldfish-koi', 'community', 'cichlids', 'specialty']
-  const fish = await Fish.find({category: req.query.category});
-  res.render('fish/index', {
-    fish, 
-    category: req.query.category,
-    title: `Category: ${req.query.category.toUpperCase()}`,
+async function show(req, res) {
+  const fish = await Fish.findById(req.params.id);
+  res.render('fish/show', {
+    fish,
+    title: `Fish`
   });
 };
+
+
+async function edit(req, res) {
+  const fish = await Fish.findOne({_id: req.params.id, userAdded: req.user._id});
+  const validCategories = Fish.schema.path('category').enumValues;
+  // if (!fish) return res.redirect('/fish');
+  res.render('fish/edit', {fish, title: "Update Fish", validCategories});
+}
+

@@ -62,12 +62,12 @@ nav > a {
 
 
 
-nav, #categories-nav > a:hover:not(.active) {
+nav > a:hover:not(.active), #categories-nav > a:hover:not(.active) {
   color: white;
   background-color: #424748;
 }
 
-nav, #categories-nav > a.active {
+nav > a.active, #categories-nav > a.active {
   color: white;
   cursor: default;
 }

@@ -14,7 +14,7 @@ router.get('/new', isLoggedIn, fishCtrl.new)
 router.get('/:id', fishCtrl.show)
 
 // GET /fish/:id/edit (edit page)
-//router.get('/:id/edit', fishCtrl.edit)
+router.get('/:id/edit', isLoggedIn, fishCtrl.edit)
 
 // POST /fish
 router.post('/', isLoggedIn, fishCtrl.create)
