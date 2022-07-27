@@ -10,8 +10,11 @@ router.get('/', fishCtrl.index);
 // GET /fish/new
 router.get('/new', isLoggedIn, fishCtrl.new)
 
-// GET /fish/show
+// GET /fish/:id
 router.get('/:id', fishCtrl.show)
+
+// GET /fish/:id/edit (edit page)
+//router.get('/:id/edit', fishCtrl.edit)
 
 // POST /fish
 router.post('/', isLoggedIn, fishCtrl.create)

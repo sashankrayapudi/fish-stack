@@ -4,10 +4,13 @@ module.exports = {
   index,
   new: newFish,
   create,
-  show
+  show,
+  // edit
 };
 
 
+
+//function edit(req, res)
 
 async function show(req, res) {
   const fish = await Fish.findById(req.params.id);
@@ -15,7 +18,7 @@ async function show(req, res) {
     fish,
     title: `Fish`
   });
-}
+};
 
 function create(req, res) {
   for (let key in req.body) {
@@ -28,19 +31,24 @@ function create(req, res) {
     // split by comma
     req.body.compatible = req.body.compatible.split(',');
   }
+
+  req.body.userAdded = req.user._id;
+  req.body.userName = req.user.name;
+  req.body.userAvatar = req.user.avatar;
+
   var fish = new Fish(req.body);
   fish.save(function(err) {
     // one way to handle errors
     if (err) return res.redirect('/fish/new');
     res.redirect(`/fish/${fish._id}`);
   });
-}
+};
 
 
 function newFish(req, res) {
   const validCategories = Fish.schema.path('category').enumValues;
   res.render('fish/new', {title: 'Add New Fish', validCategories});
-}
+};
 
 
 async function index(req, res) {
@@ -51,4 +59,4 @@ async function index(req, res) {
     category: req.query.category,
     title: `Category: ${req.query.category.toUpperCase()}`,
   });
-}
+};

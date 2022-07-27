@@ -20,6 +20,15 @@
     <input type="number" name="quantity" min="1"><br>
     <input type="submit" value="Add to My Aquarium">
   </form>
+  <br>
+
+  <div class="user-added">
+    <p>User Added: </p>
+    <img src="<%= fish.userAvatar %>" alt="avatar" referrerpolicy="no-referrer" >
+    <p><%= fish.userName %></p>
+  </div>
+  <a href="/fish/<%= fish._id %>">Edit Fish Details</a>
+  
 </section>
 
 <%- include('../partials/footer') %>

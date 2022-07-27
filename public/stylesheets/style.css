@@ -13,6 +13,10 @@ body {
     "main"
 } */
 
+h1, header {
+  text-align: center;
+}
+
 body > nav {
   grid-area: nav;
   background-color:grey;
@@ -58,12 +62,12 @@ nav > a {
 
 
 
-nav > a:hover:not(.active) {
+nav, #categories-nav > a:hover:not(.active) {
   color: white;
   background-color: #424748;
 }
 
-nav > a.active {
+nav, #categories-nav > a.active {
   color: white;
   cursor: default;
 }
@@ -110,4 +114,15 @@ th, td {
 .fish-image-index {
   height: 150px;
   border-radius: 10px;
+}
+
+.user-added {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-added img {
+  border-radius: 50%;
+  height: 40px;
 }
