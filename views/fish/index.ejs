@@ -1,34 +1,34 @@
 <%- include('../partials/header') %>
 
-  <h1 style="text-align: center"><%= title %></h1>
-  <nav id="categories">
-    <a href="/fish?category=goldfish-koi">GOLDFISH/KOI</a>
-    <a href="/fish?category=community">COMMUNITY</a>
-    <a href="/fish?category=cichlids">CICHLIDS</a>
-    <a href="/fish?category=specialty">SPECIALTY</a>
-  </nav>
+<nav id="categories-nav">
+  <a href="/fish?category=goldfish-koi" <%- title.slice(10) === 'GOLDFISH-KOI' ? 'class="active"' : '' %>>GOLDFISH/KOI</a>
+  <a href="/fish?category=community"<%- title.slice(10) === 'COMMUNITY' ? 'class="active"' : '' %> >COMMUNITY</a>
+  <a href="/fish?category=cichlids" <%- title.slice(10) === 'CICHLIDS' ? 'class="active"' : '' %>>CICHLIDS</a>
+  <a href="/fish?category=specialty" <%- title.slice(10) === 'SPECIALTY' ? 'class="active"' : '' %>>SPECIALTY</a>
+</nav>
+
+<h1 style="text-align: center"><%= title %></h1>
 
 
-
-  <table id="list">
-    <thead>
+<table id="list">
+  <thead>
+    <tr>
+      <th>Fish</th>
+      <th>Description</th>
+      <th>Image</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% fish.forEach(function(f) { %>
       <tr>
-        <th>Fish</th>
-        <th>Description</th>
-        <th>Image</th>
+        <td><%= f.name %></td>
+        <td><%= f.description %></td>
+        <td><img class="fish-image-index" src="<%= f.image %>" alt="Image of <%= f.name %>"></td>
+        <td><a href="/fish/<%= f._id %>">DETAILS</a></td>
       </tr>
-    </thead>
-    <tbody>
-      <% fish.forEach(function(f) { %>
-        <tr>
-          <td><%= f.name %></td>
-          <td><%= f.description %></td>
-          <td><img class="fish-image-index" src="<%= f.image %>" alt="Image of <%= f.name %>"></td>
-          <td><a href="/fish/<%= f._id %>">DETAILS</a></td>
-        </tr>
-      <% }); %>
-     </tbody>
-  </table>
+    <% }); %>
+    </tbody>
+</table>
     
 
 
