@@ -1,7 +1,12 @@
+
+
 body {
-  padding: 50px;
+  padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  z-index: 0;
 }
+
+
 
 /* body {
   margin: 0;
@@ -12,6 +17,10 @@ body {
     "nav"
     "main"
 } */
+
+.d-block {
+  background-size: cover;
+}
 
 h1, header {
   text-align: center;
