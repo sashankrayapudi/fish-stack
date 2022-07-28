@@ -5,7 +5,8 @@ module.exports = {
   new: newFish,
   create,
   show,
-  edit
+  edit,
+  update
 };
 
 
@@ -56,15 +57,21 @@ async function show(req, res) {
   const fish = await Fish.findById(req.params.id);
   res.render('fish/show', {
     fish,
-    title: `Fish`
+    title: `${fish.name}`
   });
 };
 
 
 async function edit(req, res) {
-  const fish = await Fish.findOne({_id: req.params.id, userAdded: req.user._id});
+  const fish = await Fish.findOne({_id: req.params.id});
   const validCategories = Fish.schema.path('category').enumValues;
   //if (!fish) return res.redirect('/fish');
   res.render('fish/edit', {fish, title: "Update Fish", validCategories});
+}
+
+
+async function update(req, res) {
+  const fish = await Fish.findOneAndUpdate({_id: req.params.id}, req.body, {new: true});
+  res.redirect(`/fish/${fish._id}`);
 }
 

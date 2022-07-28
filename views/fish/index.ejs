@@ -1,10 +1,10 @@
 <%- include('../partials/header') %>
 
 <nav id="categories-nav">
-  <a href="/fish?category=goldfish-koi" <%- title.slice(10) === 'GOLDFISH-KOI' ? 'class="active"' : '' %>>GOLDFISH/KOI</a>
-  <a href="/fish?category=community"<%- title.slice(10) === 'COMMUNITY' ? 'class="active"' : '' %> >COMMUNITY</a>
-  <a href="/fish?category=cichlids" <%- title.slice(10) === 'CICHLIDS' ? 'class="active"' : '' %>>CICHLIDS</a>
-  <a href="/fish?category=specialty" <%- title.slice(10) === 'SPECIALTY' ? 'class="active"' : '' %>>SPECIALTY</a>
+  <a href="/fish?category=goldfish-koi" <%- title.slice(10) === 'GOLDFISH-KOI'.toLowerCase() ? 'class="active"' : '' %>>GOLDFISH/KOI</a>
+  <a href="/fish?category=community"<%- title.slice(10) === 'COMMUNITY'.toLowerCase() ? 'class="active"' : '' %> >COMMUNITY</a>
+  <a href="/fish?category=cichlids" <%- title.slice(10) === 'CICHLIDS'.toLowerCase() ? 'class="active"' : '' %>>CICHLIDS</a>
+  <a href="/fish?category=specialty" <%- title.slice(10) === 'SPECIALTY'.toLowerCase() ? 'class="active"' : '' %>>SPECIALTY</a>
 </nav>
 
 <h1><%= title %></h1>

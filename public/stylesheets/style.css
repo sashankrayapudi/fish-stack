@@ -104,6 +104,13 @@ th, td {
 
 
 
+#show-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 
 
 .fish-image {
@@ -116,13 +123,13 @@ th, td {
   border-radius: 10px;
 }
 
-.user-added {
+#user-added, #add-to-tank {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.user-added img {
+#user-added img {
   border-radius: 50%;
   height: 40px;
 }
