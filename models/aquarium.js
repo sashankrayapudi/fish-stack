@@ -3,11 +3,7 @@ const Schema = mongoose.Schema;
 
 const aquariumSchema = new Schema({
   userId: { type: Schema.Types.ObjectId, ref: "User" },
-    fishList: [{type: Schema.Types.ObjectId, ref: "Fish"}],
-    qty: {
-      type: Number,
-      default: 1,
-    },
+  fishList: [{type: Schema.Types.ObjectId, ref: "Fish"}],
 }, {
     timestamps: true,
    }

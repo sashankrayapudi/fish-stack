@@ -1,4 +1,5 @@
 const Fish = require('../models/fish');
+const Aquarium = require('../models/aquarium')
 
 module.exports = {
   index,
@@ -18,7 +19,7 @@ async function index(req, res) {
   res.render('fish/index', {
     fish, 
     category: req.query.category,
-    title: `Category: ${req.query.category}`
+    title: `Category: ${req.query.category}`,
   });
 };
 
@@ -58,7 +59,7 @@ async function show(req, res) {
   const fish = await Fish.findById(req.params.id);
   res.render('fish/show', {
     fish,
-    title: `${fish.name}`
+    title: `${fish.name}`,
   });
 };
 
@@ -87,3 +88,11 @@ async function deleteFish(req, res, next) {
   }
   
 }
+
+
+// async function addToAquarium(req, res, next) {
+//   try {
+//     const fish = await Fish.findById(req.params.id);
+    
+//   }
+// }

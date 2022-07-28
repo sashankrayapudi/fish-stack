@@ -16,7 +16,7 @@
     <a href="/fish?category=goldfish-koi" <%- title.substring(0,10) === 'Category: ' ? 'class="active"' : '' %>>ALL FISH</a>
     <% if (user) { %>
       <a href="/fish/new" <%- title === 'Add New Fish' ? 'class="active"' : '' %>>ADD FISH</a>
-      <a>MY AQUARIUM</a>
+      <a href="/aquarium">MY AQUARIUM</a>
       <a href="/logout" class="logout">LOG OUT</a>
     <% } else { %>
       <a href="/auth/google" class="login">LOG IN&nbsp;</a>

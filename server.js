@@ -19,6 +19,7 @@ require('./config/passport')
 
 var indexRouter = require('./routes/index');
 var fishRouter = require('./routes/fish');
+var aquariumRouter = require('./routes/aquarium')
 
 
 var app = express();
@@ -57,6 +58,7 @@ app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
 app.use('/fish', fishRouter);
+app.use('/aquarium', aquariumRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

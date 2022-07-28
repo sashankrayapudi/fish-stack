@@ -1,41 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-  <title><%= title %></title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-</head>
-<body>
-  <header>FISH STACK</header>
-  <nav>
-    <a href="/">HOME</a>&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="/fish?category=goldfish-koi" <%- title.substring(0,10) === 'Category: ' ? 'class="active"' : '' %>>ALL FISH</a>
-    <% if (user) { %>
-      <a href="/fish/new" <%- title === 'Add New Fish' ? 'class="active"' : '' %>>ADD FISH</a>
-      <a>MY AQUARIUM</a>
-      <a href="/logout" class="logout">LOG OUT</a>
-    <% } else { %>
-      <a href="/auth/google" class="login">LOG IN&nbsp;</a>
-    <% } %>
-  </nav>
+<%- include('./partials/header') %>
   
   <p style="text-align: center">Welcome to <%= title %>, the All-In-One Guide for your Freshwater Friends</p>
 
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="https://i.imgur.com/0OlYbSX.png" class="d-block w-100" alt="..." style="width: 100%;width: 100%">
+        <img src="https://i.imgur.com/8yWu6b9.png" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="https://i.imgur.com/JXQQxVA.jpg" class="d-block w-100" alt="..." style="width: 100%;width: 100%">
+        <img src="https://i.imgur.com/JXQQxVA.jpg" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="https://i.imgur.com/hOxvuIu.jpg" class="d-block w-100" alt="..." style="width: 100%;width: 100%">
+        <img src="https://i.imgur.com/hOxvuIu.jpg" class="d-block w-100" alt="...">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -50,3 +26,5 @@
 
 </body>
 </html>
+
+<%- include('./partials/footer') %>

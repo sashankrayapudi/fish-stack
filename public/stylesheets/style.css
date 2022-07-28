@@ -2,9 +2,11 @@
 
 body {
   padding: 0px;
+  margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  z-index: 0;
-}
+  height: 100vh;
+  background-color: #424748;
+}  
 
 
 
@@ -25,6 +27,7 @@ body {
 h1, header {
   text-align: center;
 }
+
 
 body > nav {
   grid-area: nav;
@@ -90,6 +93,7 @@ nav > a.active, #categories-nav > a.active {
 
 table {
   font-size: 20px;
+  align-content: center;
 }
 
 table thead th {

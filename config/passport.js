@@ -3,6 +3,7 @@ const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
 const User = require('../models/user');
+const Aquarium = require('../models/aquarium')
 
 passport.use(
   new GoogleStrategy(
@@ -32,6 +33,9 @@ passport.use(
           googleId: profile.id,
           email: profile.emails[0].value,
           avatar: profile.photos[0].value
+        });
+        await Aquarium.create({
+          userId: user._id
         });
         return cb(null, user);
       } catch (err) {
