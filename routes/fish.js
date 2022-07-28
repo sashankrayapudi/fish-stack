@@ -19,6 +19,9 @@ router.get('/:id/edit', isLoggedIn, fishCtrl.edit)
 // PUT /fish/:id (update the fish)
 router.put('/:id', fishCtrl.update);
 
+// DELETE /fish/:id (delete the fish)
+router.delete('/:id', fishCtrl.delete)
+
 // POST /fish
 router.post('/', isLoggedIn, fishCtrl.create)
 

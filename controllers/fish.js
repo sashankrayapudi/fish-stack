@@ -6,7 +6,8 @@ module.exports = {
   create,
   show,
   edit,
-  update
+  update,
+  delete: deleteFish
 };
 
 
@@ -75,3 +76,14 @@ async function update(req, res) {
   res.redirect(`/fish/${fish._id}`);
 }
 
+
+async function deleteFish(req, res, next) {
+  try {
+    const fish = await Fish.findOneAndDelete({_id: req.params.id});
+    if (!fish) throw new Error('Nice Try!');
+    res.redirect('/fish')
+  } catch(err) {
+    next(err);
+  }
+  
+}

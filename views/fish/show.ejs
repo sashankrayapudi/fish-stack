@@ -28,6 +28,9 @@
     <p><%= fish.userName %></p>
   </div><br>
   <a href="/fish/<%= fish._id %>/edit">Edit Fish Details</a>
+  <form action="/fish/<%= fish._id %>?_method=DELETE" method="POST">
+    <button type="submit">Delete this Fish</button>
+  </form>
   
 </section>
 
