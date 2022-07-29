@@ -15,10 +15,10 @@
       <h5>No Compatibility Info Yet</h5>
     <% } %>
   </ul>
-  <form id="add-to-tank" action="/aquarium/?_method=PUT" method="POST">
+  <form id="add-to-tank" action="/aquarium/fish/<%= fish._id %>?_method=PUT" method="POST">
     <label>Quantity:</label>&nbsp;&nbsp;
-    <input type="number" name="quantity" min="1"><br>&nbsp;&nbsp;
-    <input type="submit" value="Add to My Aquarium">
+    <input placeholder="QTY" name="quantity" type="number" min="1"><br>&nbsp;&nbsp;
+    <button type="submit">Add <%= fish.name %> to my Aquarium</button>
   </form>
   <br>
 

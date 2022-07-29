@@ -8,8 +8,8 @@ const isLoggedIn = require('../config/auth');
 // GET /aquarium
 router.get('/', aquariumCtrl.index);
 
-// PUT /aquarium
-router.put('/', aquariumCtrl.update)
+// PUT /aquarium/fish/:id
+router.put('/fish/:id', aquariumCtrl.update);
 
 
 
