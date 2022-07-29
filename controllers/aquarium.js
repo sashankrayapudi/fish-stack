@@ -17,6 +17,7 @@ async function index(req, res, next) {
     aquarium.fishList.forEach(function(fish){
       minGal += fish.galPerFish;
     })
+    // Time: O(n^2)
     for (let i = 0; i < aquarium.fishList.length; i++) {
       const validFish = aquarium.fishList[i].compatible;
       for (let i = 0; i < aquarium.fishList.length; i++) {
