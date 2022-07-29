@@ -18,11 +18,11 @@ Add fish to your aquarium and get compatiblity info along with tank requirements
 
 # Getting Started
 
-[Go To Fish Stack!](https://i.imgur.com/vRiNVoJ.png)
+[Go To Fish Stack!](https://fish-stack.herokuapp)
 
 # Next Steps
 
 
-- Future enhancement 1: Add animation when tokens are dropped/add marker animations
-- Future enhancement 2: Optimize win logic
-- Future enhancement 3: Add reverse and restart buttons
+- Future enhancement 1: Add My Aquarium Compatibility
+- Future enhancement 2: Add Icons
+- Future enhancement 3: Improve Styling
