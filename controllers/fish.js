@@ -55,11 +55,15 @@ async function create(req, res) {
 
 
 async function show(req, res) {
-  const fish = await Fish.findById(req.params.id);
-  res.render('fish/show', {
+  try {
+    const fish = await Fish.findById(req.params.id);
+    res.render('fish/show', {
     fish,
     title: `${fish.name}`,
   });
+  } catch (err) {
+    next (err)
+  }
 };
 
 // function show(req, res) {
