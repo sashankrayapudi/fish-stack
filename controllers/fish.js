@@ -30,17 +30,16 @@ function newFish(req, res) {
 };
 
 
-function create(req, res) {
+async function create(req, res) {
   for (let key in req.body) {
     if (req.body[key] === '') delete req.body[key];
   }
   
-  if (req.body.compatible) {
-    // remove whitespace next to commas
-    req.body.compatible = req.body.compatible.replace(/\s*,\s*/g, ',');
-    // split by comma
-    req.body.compatible = req.body.compatible.split(',');
-  }
+
+  if (req.body.compatible) req.body.compatible = req.body.compatible.replace(/\s*,\s*/g, ',');
+  // split by comma
+  if (req.body.compatible) req.body.compatible = req.body.compatible.split(',');
+
 
   req.body.userAdded = req.user._id;
   req.body.userName = req.user.name;
@@ -63,6 +62,23 @@ async function show(req, res) {
   });
 };
 
+// function show(req, res) {
+//   Fish.findById(req.params.id)
+//     .populate('compatible')
+//     .exec(function(err, fish) {
+//       Fish.find(
+//         {_id: {$nin: fish.compatible}},
+//         function(err, compatibleFish) {
+//           res.render('fish/show', {
+//             title: `${fish.name}`,
+//             compatibleFish,
+//             fish
+//           });
+//         }
+//       );
+//     });
+// }
+
 
 async function edit(req, res) {
   const fish = await Fish.findOne({_id: req.params.id});
@@ -73,9 +89,14 @@ async function edit(req, res) {
 
 
 async function update(req, res) {
-  const fish = await Fish.findOneAndUpdate({_id: req.params.id}, req.body, {new: true});
-  res.redirect(`/fish/${fish._id}`);
+  try {
+    const fish = await Fish.findOneAndUpdate({_id: req.params.id}, req.body, {new: true});
+    res.redirect(`/fish/${fish._id}`);
+  } catch (err) {
+    next (err)
+  }
 }
+
 
 
 async function deleteFish(req, res, next) {

@@ -1,9 +1,22 @@
 <%- include('../partials/header') %>
 
-<h1><%= title %></h1>
+<h1 style="text-align: center;"><%= title %></h1>
 
+<% if (aquarium.fishList.length) { %>
+  <% aquarium.fishList.forEach(function(fish, idx) { %>
+    <hr>
+    <article>
+      <p><%= fish.name %> <img src="<%= fish.image %>" alt="Fish Image" style="width:100px"></p>
+      <form action="/aquarium/<%= idx %>?_method=PUT" method="POST" style="text-align: right;">
+        <button type="submit" >Remove</button>
+      </form>
+    </article>
+  <% }) %>
+  <h2 style="text-align: center;">Minimum Tank Size: <%= minGal %> Gallons</h2>
+<% } else { %>
+  <h2 style="text-align: center;">There are no Fish in your Aquarium Yet!</h2>
+<% } %>
 
-<p><%= aquarium %></p>
 
 
 <%- include('../partials/footer') %>

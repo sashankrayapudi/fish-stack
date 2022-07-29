@@ -1,4 +1,6 @@
-
+html {
+  background-color: #424748;
+}
 
 body {
   padding: 0px;
@@ -24,8 +26,16 @@ body {
   background-size: cover;
 }
 
-h1, header {
+p, header {
   text-align: center;
+  background-color: #424748;
+  color: plum;
+}
+
+header {
+  font-size: xx-large;
+  color: goldenrod;
+  font-family: "Lucida Console", "Courier New", monospace;
 }
 
 
@@ -37,7 +47,6 @@ body > nav {
   align-items: center;
   padding: 0 20px 0 30px;
   border-radius: 10px 10px 0 0;
-  margin: 10px;
   margin-bottom: 0;
 }
 
@@ -47,7 +56,6 @@ body > nav {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin: 10px;
   margin-top: 0;
   border-radius: 0 0 10px 10px;
 }
@@ -145,4 +153,11 @@ th, td {
 #user-added img {
   border-radius: 50%;
   height: 40px;
+}
+
+
+
+section, div {
+  background-color: #424748;
+  color: plum;
 }

@@ -5,11 +5,12 @@
   <img class="fish-image" src="<%= fish.image %>" alt="Image of <%= fish.name %>">
   <div>Description: <%= fish.description %></div>
   <div>Gallons per Fish: <%= fish.galPerFish %></div>
+  <div>Tank: <%= fish.category %></div>
   <div>Comptabile Fish:</div>
   <ul>
     <% if (fish.compatible.length) { %>
-      <%- fish.comptabile.map(f => 
-        `<li>${f.name} <small>${p.galPerFish}</small></li>`
+      <%- fish.compatible.map(f => 
+        `<li>${f.name}</li>`
       ) %>
     <% } else { %>
       <h5>No Compatibility Info Yet</h5>

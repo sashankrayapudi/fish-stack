@@ -6,10 +6,13 @@ const isLoggedIn = require('../config/auth');
 
 
 // GET /aquarium
-router.get('/', aquariumCtrl.index);
+router.get('/', isLoggedIn, aquariumCtrl.index);
 
 // PUT /aquarium/fish/:id
-router.put('/fish/:id', aquariumCtrl.update);
+router.put('/fish/:id', isLoggedIn, aquariumCtrl.update);
+
+// PUT /aquarium/:idx
+router.put('/:idx', isLoggedIn, aquariumCtrl.updateRemove)
 
 
 
