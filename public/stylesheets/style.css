@@ -1,6 +1,4 @@
-html {
-  background-color: #424748;
-}
+
 
 body {
   padding: 0px;
@@ -114,7 +112,7 @@ table td {
 }
 
 table, th, td {
-  border: 1px solid white;
+  border: 1px solid #424748;;
   border-collapse: collapse;
 }
 
@@ -160,4 +158,13 @@ th, td {
 section, div {
   background-color: #424748;
   color: plum;
+}
+
+
+form {
+  color: paleturquoise;
+}
+
+h1, h2 {
+  color: palevioletred
 }
