@@ -1,10 +1,10 @@
-# fish-stack
+# Fish Stack
 
 Add fish to your aquarium and get compatiblity info along with tank requirements!
 
 # Screenshot
 
-<img src="https://imgur.com/W8B1tTG.jpg">
+<img src="https://i.imgur.com/vRiNVoJ.png">
 
 # Technologies Used
 
