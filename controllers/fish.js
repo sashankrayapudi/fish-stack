@@ -8,7 +8,8 @@ module.exports = {
   show,
   edit,
   update,
-  delete: deleteFish
+  delete: deleteFish,
+  addToCompatible
 };
 
 
@@ -30,7 +31,7 @@ function newFish(req, res) {
 };
 
 
-async function create(req, res) {
+function create(req, res) {
   for (let key in req.body) {
     if (req.body[key] === '') delete req.body[key];
   }
@@ -56,9 +57,12 @@ async function create(req, res) {
 
 async function show(req, res) {
   try {
-    const fish = await Fish.findById(req.params.id);
+    const fish = await Fish.findById(req.params.id).populate('compatible');
+    const allFish = await Fish.find({_id: {$nin: fish.compatible}});
+    console.log(allFish);
     res.render('fish/show', {
     fish,
+    allFish,
     title: `${fish.name}`,
   });
   } catch (err) {
@@ -85,16 +89,17 @@ async function show(req, res) {
 
 
 async function edit(req, res) {
-  const fish = await Fish.findOne({_id: req.params.id});
+  const fish = await Fish.findOne({_id: req.params.id, userAdded: req.user._id});
+  const allFish = await Fish.find({_id: {$nin: fish.compatible}});
   const validCategories = Fish.schema.path('category').enumValues;
-  //if (!fish) return res.redirect('/fish');
-  res.render('fish/edit', {fish, title: "Update Fish", validCategories});
+  if (!fish) return res.redirect('/fish');
+  res.render('fish/edit', {fish, title: "Update Fish", validCategories, allFish});
 }
 
 
-async function update(req, res) {
+async function update(req, res, next) {
   try {
-    const fish = await Fish.findOneAndUpdate({_id: req.params.id}, req.body, {new: true});
+    const fish = await Fish.findOneAndUpdate({_id: req.params.id, userAdded: req.user._id}, req.body, {new: true});
     res.redirect(`/fish/${fish._id}`);
   } catch (err) {
     next (err)
@@ -105,8 +110,9 @@ async function update(req, res) {
 
 async function deleteFish(req, res, next) {
   try {
-    const fish = await Fish.findOneAndDelete({_id: req.params.id});
-    if (!fish) throw new Error('Nice Try!');
+    console.log(req.user._id)
+    const fish = await Fish.findOneAndDelete({_id: req.params.id, userAdded: req.user._id});
+    // if (!fish) throw new Error('Nice Try!');
     res.redirect('/fish')
   } catch(err) {
     next(err);
@@ -115,9 +121,13 @@ async function deleteFish(req, res, next) {
 }
 
 
-// async function addToAquarium(req, res, next) {
-//   try {
-//     const fish = await Fish.findById(req.params.id);
-    
-//   }
-// }
+async function addToCompatible(req, res, next) {
+  try {
+    const fish = await Fish.findById(req.params.id);
+    fish.compatible.push(req.body.fishId)
+    fish.save();
+    res.redirect(`/fish/${fish._id}`);
+  } catch (err) {
+    next (err)
+  }
+}

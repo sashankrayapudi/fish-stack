@@ -22,6 +22,9 @@ router.put('/:id', fishCtrl.update);
 // DELETE /fish/:id (delete the fish)
 router.delete('/:id', fishCtrl.delete)
 
+// POST /fish/:id/allFish
+router.post('/:id/allFish', fishCtrl.addToCompatible);
+
 // POST /fish
 router.post('/', isLoggedIn, fishCtrl.create)
 

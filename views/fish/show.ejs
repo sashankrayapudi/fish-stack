@@ -16,6 +16,14 @@
       <h5>No Compatibility Info Yet</h5>
     <% } %>
   </ul>
+  <form id="add-per-to-compatible" action="/fish/<%= fish._id %>/allFish" method="POST">
+    <select name="fishId">
+      <%- allFish.map(f => 
+        `<option value="${f._id}">${f.name}</option>`
+      ).join('') %>
+    </select>
+    <button type="submit">Add to Compatible</button>
+  </form>
   <form id="add-to-tank" action="/aquarium/fish/<%= fish._id %>?_method=PUT" method="POST">
     <label>Quantity:</label>&nbsp;&nbsp;
     <input placeholder="QTY" name="quantity" type="number" min="1"><br>&nbsp;&nbsp;
