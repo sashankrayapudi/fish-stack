@@ -27,7 +27,7 @@ Add fish to your aquarium and get compatiblity info along with tank requirements
 
 # Future Enhancements
 
-- [ ] Add My Aquarium Compatibility
+- [x] Add My Aquarium Compatibility
 - [ ] Add Icons
 - [ ] Error Pages
 - [ ] Embedded Comments for each Fish
