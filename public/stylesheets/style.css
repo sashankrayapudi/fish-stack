@@ -156,5 +156,15 @@ form {
 }
 
 h1, h2 {
-  color: palevioletred
+  color: palevioletred;
+}
+
+
+#fish-info {
+  padding: 5px;
+  color: lightcoral;
+}
+
+a {
+  color: lightcoral;
 }

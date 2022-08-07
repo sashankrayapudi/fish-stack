@@ -18,16 +18,16 @@ router.get('/:id', fishCtrl.show)
 router.get('/:id/edit', isLoggedIn, fishCtrl.edit)
 
 // PUT /fish/:id (update the fish)
-router.put('/:id', fishCtrl.update);
+router.put('/:id', isLoggedIn, fishCtrl.update);
 
 // DELETE /fish/:id (delete the fish)
-router.delete('/:id', fishCtrl.delete)
+router.delete('/:id', isLoggedIn, fishCtrl.delete)
 
 // PUT /fish/:id/allFish
-router.put('/:id/allFish', fishCtrl.addToCompatible);
+router.put('/:id/allFish', isLoggedIn, fishCtrl.addToCompatible);
 
 // PUT /fish/:id/:idx
-router.put('/:id/:idx', fishCtrl.removeFromCompatible);
+router.put('/:id/:idx', isLoggedIn, fishCtrl.removeFromCompatible);
 
 // POST /fish
 router.post('/', isLoggedIn, fishCtrl.create)

@@ -1,24 +1,24 @@
 <%- include('../partials/header') %>
 
 <section id="show-page">
-  <div>Name: <%= fish.name %></div>
-  <img class="fish-image" src="<%= fish.image %>" alt="Image of <%= fish.name %>">
-  <div>Description: <%= fish.description %></div>
-  <div>Gallons per Fish: <%= fish.galPerFish %></div>
-  <div>Tank: <%= fish.category %></div>
-  <div>Comptabile Fish:</div>
+  <div id="fish-info" style="font-size: large;color: skyblue"><%= fish.name %></div>
+  <img id="fish-info" class="fish-image" src="<%= fish.image %>" alt="Image of <%= fish.name %>">
+  <div id="fish-info"><u style="color: skyblue">Description:</u> <%= fish.description %></div>
+  <div id="fish-info"><u style="color: skyblue">Gallons per Fish:</u> <%= fish.galPerFish %></div>
+  <div id="fish-info"><u style="color: skyblue">Tank:</u> <%= fish.category.toUpperCase() %></div>
+  <div id="fish-info"><u style="color: skyblue">Comptabile Fish</u></div>
   <ul>
     <% if (fish.compatible.length) { %>
       <% fish.compatible.forEach(function(f, idx) { %>
-        <li>
-          <%= f.name %>
+        <li style="color: pink;display: flex;justify-content: space-between;">
+          <p style="color: lightcoral;font-size: small;"><%= f.name %></p>
           <form action="/fish/<%= fish._id %>/<%= idx %>?_method=PUT" method="POST" style="text-align: right;">
-            <button type="submit" >X</button>
+            <button type="submit" style="margin-left: 5px;padding: 1px;font-size: small;">x</button>
           </form>
         </li>
       <% }) %>
     <% } else { %>
-      <h5>No Compatibility Info Yet</h5>
+      <h5>None</h5>
     <% } %>
   </ul>
   <form id="add-to-compatible" action="/fish/<%= fish._id %>/allFish?_method=PUT" method="POST">
@@ -27,8 +27,12 @@
         `<option value="${f._id}">${f.name}</option>`
       ).join('') %>
     </select>
-    <button type="submit">Add to Compatible</button>
+    <button type="submit">Add to List of Compatible Fish</button>
   </form>
+
+  <hr>
+  <hr>
+
   <form id="add-to-tank" action="/aquarium/fish/<%= fish._id %>?_method=PUT" method="POST">
     <label>Quantity:</label>&nbsp;&nbsp;
     <input placeholder="QTY" name="quantity" type="number" min="1" value=1><br>&nbsp;&nbsp;
@@ -36,12 +40,15 @@
   </form>
   <br>
 
+  <hr>
+  <hr>
+
   <div id="user-added">
     <p>User Added:</p>&nbsp;&nbsp;
     <img src="<%= fish.userAvatar %>" alt="avatar" referrerpolicy="no-referrer">&nbsp;
     <p><%= fish.userName %></p>
   </div><br>
-  <a href="/fish/<%= fish._id %>/edit">Edit Fish Details</a>
+  <a href="/fish/<%= fish._id %>/edit" style="margin-bottom: 5px;">Edit Fish Details</a>
   <form action="/fish/<%= fish._id %>?_method=DELETE" method="POST">
     <button type="submit">Delete this Fish</button>
   </form>

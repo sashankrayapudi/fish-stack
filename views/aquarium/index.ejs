@@ -1,19 +1,23 @@
 <%- include('../partials/header') %>
 
-<h1 style="text-align: center;"><%= title %></h1>
+<h1 style="text-align: center;background-color: skyblue;padding: 10px"><%= title %></h1>
 
 <% if (aquarium.fishList.length) { %>
   <% aquarium.fishList.forEach(function(fish, idx) { %>
-    <hr>
     <article>
       <p><%= fish.name %> <img src="<%= fish.image %>" alt="Fish Image" style="width:100px"></p>
       <form action="/aquarium/<%= idx %>?_method=PUT" method="POST" style="text-align: right;">
         <button type="submit" >Remove</button>
       </form>
+      <hr>
     </article>
   <% }) %>
-  <h3 style="text-align: center;color: plum">Minimum Tank Size: <%= minGal %> Gallons</h3>
-  <h2 style="text-align: center;color: skyblue"><%= isCompatible ? "Your tank is COMPATIBLE, have fun with your Friendly Fish!!!" : "Your tank is NOT compatible, please look through your selections"%></h2>
+  <% if (isCompatible) { %>
+    <h3 style="text-align: center;color: plum">Minimum Tank Size: <%= minGal %> Gallons</h3>
+    <h2 style="text-align: center;color: skyblue">Your tank is COMPATIBLE, have fun with your Friendly Fish!!!</h2>
+  <% } else { %>
+    <h2 style="text-align: center;color: skyblue">Your tank is NOT compatible, please look through your selections</h2>
+  <% } %>      
 <% } else { %>
   <h2 style="text-align: center;color: skyblue">There are no Fish in your Aquarium Yet!</h2>
 <% } %>
