@@ -4,7 +4,8 @@ The All-In-One guide for your Freshwater Friends.
 
 Add fish to your aquarium and get compatiblity info along with tank requirements!
 
-<img src="https://i.imgur.com/ca2oPyQ.jpg">
+
+<img src="https://i.imgur.com/myopYzM.jpg">
 
 # Technologies Used
 
