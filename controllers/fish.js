@@ -33,7 +33,7 @@ async function index(req, res) {
 
 function newFish(req, res) {
   const validCategories = Fish.schema.path('category').enumValues;
-  res.render('fish/new', {title: 'Add New Fish', validCategories});
+  res.render('fish/new', {title: 'Add a New Fish', validCategories});
 };
 
 
