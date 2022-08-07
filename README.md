@@ -28,6 +28,6 @@ Add fish to your aquarium and get compatiblity info along with tank requirements
 # Future Enhancements
 
 - [ ] Add My Aquarium Compatibility
-- [] Add Icons
-- [] Error Pages
-- [] Embedded Comments for each Fish
+- [ ] Add Icons
+- [ ] Error Pages
+- [ ] Embedded Comments for each Fish
