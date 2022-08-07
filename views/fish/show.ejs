@@ -9,14 +9,19 @@
   <div>Comptabile Fish:</div>
   <ul>
     <% if (fish.compatible.length) { %>
-      <%- fish.compatible.map(f => 
-        `<li>${f.name}</li>`
-      ) %>
+      <% fish.compatible.forEach(function(f, idx) { %>
+        <li>
+          <%= f.name %>
+          <form action="/fish/<%= fish._id %>/<%= idx %>?_method=PUT" method="POST" style="text-align: right;">
+            <button type="submit" >X</button>
+          </form>
+        </li>
+      <% }) %>
     <% } else { %>
       <h5>No Compatibility Info Yet</h5>
     <% } %>
   </ul>
-  <form id="add-per-to-compatible" action="/fish/<%= fish._id %>/allFish" method="POST">
+  <form id="add-to-compatible" action="/fish/<%= fish._id %>/allFish?_method=PUT" method="POST">
     <select name="fishId">
       <%- allFish.map(f => 
         `<option value="${f._id}">${f.name}</option>`
