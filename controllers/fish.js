@@ -17,9 +17,14 @@ module.exports = {
 
 async function index(req, res) {
   //enum: ['goldfish-koi', 'community', 'cichlids', 'specialty']
-  const fish = await Fish.find({category: req.query.category});
+  if (req.query.category === undefined) {
+    var fishs = await Fish.find({});
+  } else {
+    var fishs = await Fish.find({category: req.query.category});
+  }
+
   res.render('fish/index', {
-    fish, 
+    fishs, 
     category: req.query.category,
     title: `Category: ${req.query.category}`,
   });
