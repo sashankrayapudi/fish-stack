@@ -12,9 +12,10 @@
       </form>
     </article>
   <% }) %>
-  <h2 style="text-align: center;">Minimum Tank Size: <%= minGal %> Gallons</h2>
+  <h3 style="text-align: center;color: plum">Minimum Tank Size: <%= minGal %> Gallons</h3>
+  <h2 style="text-align: center;color: skyblue"><%= isCompatible ? "Your tank is COMPATIBLE, have fun with your Friendly Fish!!!" : "Your tank is NOT compatible, please look through your selections"%></h2>
 <% } else { %>
-  <h2 style="text-align: center;">There are no Fish in your Aquarium Yet!</h2>
+  <h2 style="text-align: center;color: skyblue">There are no Fish in your Aquarium Yet!</h2>
 <% } %>
 
 

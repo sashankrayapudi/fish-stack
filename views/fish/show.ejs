@@ -31,7 +31,7 @@
   </form>
   <form id="add-to-tank" action="/aquarium/fish/<%= fish._id %>?_method=PUT" method="POST">
     <label>Quantity:</label>&nbsp;&nbsp;
-    <input placeholder="QTY" name="quantity" type="number" min="1"><br>&nbsp;&nbsp;
+    <input placeholder="QTY" name="quantity" type="number" min="1" value=1><br>&nbsp;&nbsp;
     <button type="submit">Add <%= fish.name %> to my Aquarium</button>
   </form>
   <br>

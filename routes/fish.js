@@ -13,8 +13,6 @@ router.get('/new', isLoggedIn, fishCtrl.new)
 // GET /fish/:id
 router.get('/:id', fishCtrl.show)
 
-// PUT /fish/:id/:idx
-router.put('/:id/:idx', fishCtrl.removeFromCompatible);
 
 // GET /fish/:id/edit (edit page)
 router.get('/:id/edit', isLoggedIn, fishCtrl.edit)
@@ -27,6 +25,9 @@ router.delete('/:id', fishCtrl.delete)
 
 // PUT /fish/:id/allFish
 router.put('/:id/allFish', fishCtrl.addToCompatible);
+
+// PUT /fish/:id/:idx
+router.put('/:id/:idx', fishCtrl.removeFromCompatible);
 
 // POST /fish
 router.post('/', isLoggedIn, fishCtrl.create)

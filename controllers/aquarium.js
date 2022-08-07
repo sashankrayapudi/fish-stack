@@ -13,16 +13,21 @@ async function index(req, res, next) {
   try {
     const aquarium = await Aquarium.findOne({userId: req.user._id}).populate('fishList');
     let minGal = 0;
-    let compatible = true;
+    let isCompatible = true;
     aquarium.fishList.forEach(function(fish){
       minGal += fish.galPerFish;
     })
     // Time: O(n^2)
     for (let i = 0; i < aquarium.fishList.length; i++) {
-      const validFish = aquarium.fishList[i].compatible;
-      for (let i = 0; i < aquarium.fishList.length; i++) {
-        if (!(validFish.includes(aquarium.fishList[i]))) {
-          compatible = false;
+      let validFish = aquarium.fishList[i].compatible;
+      console.log(validFish)
+      let fishListCopy = [...aquarium.fishList]
+      console.log(fishListCopy)
+      fishListCopy.splice(i,1)
+      for (let i = 0; i < fishListCopy.length; i++) {
+        // console.log(isCompatible)
+        if (!(validFish.includes(fishListCopy[i]._id))) {
+          isCompatible = false;
           break;
         }
       }
@@ -31,7 +36,7 @@ async function index(req, res, next) {
       aquarium,
       title: 'My Aquarium',
       minGal,
-      compatible
+      isCompatible
     })
   } catch (err) {
     next (err);

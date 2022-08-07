@@ -126,6 +126,7 @@ async function addToCompatible(req, res, next) {
   try {
     const fish = await Fish.findById(req.params.id);
     fish.compatible.push(req.body.fishId)
+    // console.log(fish.compatible)
     fish.save();
     res.redirect(`/fish/${fish._id}`);
   } catch (err) {
