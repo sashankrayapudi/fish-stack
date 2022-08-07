@@ -6,7 +6,7 @@ Add fish to your aquarium and get compatiblity info along with tank requirements
 
 # Screenshot
 
-<img src="https://i.imgur.com/etHYYV1.png">
+<img src="https://i.imgur.com/7176EQK.jpg">
 
 # Technologies Used
 
