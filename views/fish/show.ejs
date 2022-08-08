@@ -13,7 +13,7 @@
         <li style="color: pink;display: flex;justify-content: space-between;">
           <p style="color: lightcoral;font-size: small;"><%= f.name %></p>
           <form action="/fish/<%= fish._id %>/<%= idx %>?_method=PUT" method="POST" style="text-align: right;">
-            <input type="image" src="/images/delete.png" style="margin-left: 5px;padding: 0;width: 1.2rem;">
+            <input type="image" src="/images/delete.png" class="delete-icon">
           </form>
         </li>
       <% }) %>
@@ -42,7 +42,7 @@
         <li style="color: pink;display: flex;justify-content: space-between;">
           <a href="<%= site.link %>"><%= site.name %></a>
           <form action="/fish/<%= fish._id %>/sites/<%= siteIdx %>?_method=PUT" method="POST" style="text-align: right;">
-            <input type="image" src="/images/delete.png" style="margin-left: 5px;padding: 0;width: 1.2rem;">
+            <input type="image" src="/images/delete.png" class="delete-icon">
           </form>
         </li>
       <% }) %>

@@ -5,7 +5,8 @@ body {
   margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   height: 100vh;
-  background-color: #424748;
+  /* background-color: #424748; */
+  background-color: rgb(0,39,78);
 }  
 
 
@@ -16,7 +17,7 @@ body {
 
 p, header {
   text-align: center;
-  background-color: #424748;
+  background-color: rgb(0,39,78);
   color: plum;
 }
 
@@ -159,6 +160,12 @@ th, td {
   border-radius: 10px;
 }
 
+.delete-icon {
+  margin-left: 5px;
+  padding: 0;
+  width: 1rem;
+}
+
 /* #diver-img {
   display: block;
   margin-left: auto;
@@ -180,7 +187,7 @@ th, td {
 
 
 section, div {
-  background-color: #424748;
+  background-color: rgb(0,39,78);;
   color: plum;
 }
 
