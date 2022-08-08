@@ -159,6 +159,13 @@ th, td {
   border-radius: 10px;
 }
 
+/* #diver-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+} */
+
 #user-added, #add-to-tank {
   display: flex;
   justify-content: center;
