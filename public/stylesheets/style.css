@@ -120,24 +120,24 @@ th, td {
   align-items: center;
 }
 
-#new-form {
+#new-form, #edit-form {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: 1fr 1fr
 }
 
-#new-form * {
+#new-form *, #edit-form * {
   font-size: 20px;
   padding: 5px;
   border-radius: 5px;
 }
 
-#new-form label {
+#new-form label, #edit-form label {
   grid-column-start: 1;
   justify-self: center;
 }
 
-#new-form input, #new-form select{
+#new-form input, #new-form select, #edit-form input, #edit-form select {
   grid-column-start: 2;
   justify-self: start;
 }

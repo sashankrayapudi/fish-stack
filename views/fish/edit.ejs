@@ -1,8 +1,8 @@
 <%- include('../partials/header') %>
 
-<h1><%= title %></h1>
+<h1 style="text-align: center;"><%= title %></h1>
 
-<form action="/fish/<%= fish._id %>?_method=PUT" method="POST">
+<form id="edit-form" action="/fish/<%= fish._id %>?_method=PUT" method="POST">
   <label>Name:</label>
   <input type="text" name="name" value="<%= fish.name %>"><br>
   <label>Image URL (imgur):</label>
@@ -17,8 +17,8 @@
       </option>
     <% }) %>
   </select><br>
-  <label>Comptabile Fish (separate fish with commas):</label>
-  <input type="text" name="comptabile" value="<%= fish.compatible %>"><br>
+  <!-- <label>Comptabile Fish (separate fish with commas):</label>
+  <input type="text" name="comptabile" value="<%= fish.compatible %>"><br> -->
   <label>Gallons per Fish:</label>
   <input type="text" name="galPerFish" value="<%= fish.galPerFish %>"><br>
   <input type="submit" value="Update Fish">

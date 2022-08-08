@@ -95,17 +95,17 @@ async function show(req, res) {
 
 
 async function edit(req, res) {
-  const fish = await Fish.findOne({_id: req.params.id, userAdded: req.user._id});
-  const allFish = await Fish.find({_id: {$nin: fish.compatible}});
+  const fish = await Fish.findOne({_id: req.params.id});
+  // const allFish = await Fish.find({_id: {$nin: fish.compatible}});
   const validCategories = Fish.schema.path('category').enumValues;
   if (!fish) return res.redirect('/fish');
-  res.render('fish/edit', {fish, title: "Update Fish", validCategories, allFish});
+  res.render('fish/edit', {fish, title: "Update Fish", validCategories});
 }
 
 
 async function update(req, res, next) {
   try {
-    const fish = await Fish.findOneAndUpdate({_id: req.params.id, userAdded: req.user._id}, req.body, {new: true});
+    const fish = await Fish.findOneAndUpdate({_id: req.params.id}, req.body, {new: true});
     res.redirect(`/fish/${fish._id}`);
   } catch (err) {
     next (err)

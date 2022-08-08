@@ -13,7 +13,7 @@
         <li style="color: pink;display: flex;justify-content: space-between;">
           <p style="color: lightcoral;font-size: small;"><%= f.name %></p>
           <form action="/fish/<%= fish._id %>/<%= idx %>?_method=PUT" method="POST" style="text-align: right;">
-            <button type="submit" style="margin-left: 5px;padding: 1px;font-size: small;">x</button>
+            <input type="image" src="/images/delete.png" style="margin-left: 5px;padding: 0;width: 1.2rem;">
           </form>
         </li>
       <% }) %>
