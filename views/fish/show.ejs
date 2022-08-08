@@ -30,8 +30,36 @@
     <button type="submit">Add to List of Compatible Fish</button>
   </form>
 
+
   <hr>
   <hr>
+
+  <div id="fish-sites"><u style="color: skyblue">Buy <%= title %> Here!</u></div>
+  <br>
+  <ul>
+    <% if (fish.sites.length) { %>
+      <% fish.sites.forEach(function(site, siteIdx) { %>
+        <li style="color: pink;display: flex;justify-content: space-between;">
+          <a href="<%= site.link %>"><%= site.name %></a>
+          <form action="/fish/<%= fish._id %>/sites/<%= siteIdx %>?_method=PUT" method="POST" style="text-align: right;">
+            <input type="image" src="/images/delete.png" style="margin-left: 5px;padding: 0;width: 1.2rem;">
+          </form>
+        </li>
+      <% }) %>
+    <% } else { %>
+      <p style="color: lightcoral;">No Stores Info Yet</p>
+    <% } %>
+  </ul>
+
+  <form id="add-to-sites" action="/fish/<%= fish._id %>/sites?_method=PUT" method="POST">
+    <input type="text" name="siteName" placeholder="Name Here" >
+    <input type="text" name="siteLink" placeholder="Link Here">
+    <button type="submit">Add to List of Stores</button>
+  </form>
+
+  <hr>
+  <hr>
+
 
   <form id="add-to-tank" action="/aquarium/fish/<%= fish._id %>?_method=PUT" method="POST">
     <label>Quantity:</label>&nbsp;&nbsp;

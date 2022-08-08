@@ -17,6 +17,7 @@ const fishSchema = new Schema({
     type: Number,
     required: true
   },
+  sites: [{name: String, link: String}],
   userAdded: {type: Schema.Types.ObjectId, ref: 'User'},
   userName: String,
   userAvatar: String

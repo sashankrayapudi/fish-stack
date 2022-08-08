@@ -10,7 +10,9 @@ module.exports = {
   update,
   delete: deleteFish,
   addToCompatible,
-  removeFromCompatible
+  removeFromCompatible,
+  addToSites,
+  removeFromSites
 };
 
 
@@ -141,10 +143,35 @@ async function addToCompatible(req, res, next) {
 
 async function removeFromCompatible(req, res, next) {
   try {
-    console.log(req.params.id)
+    // console.log(req.params.id)
     const fish = await Fish.findById(req.params.id);
-    console.log(req.params.idx)
+    // console.log(req.params.idx)
     fish.compatible.splice(req.params.idx,1)
+    fish.save()
+    res.redirect(`/fish/${fish._id}`);
+  } catch (err) {
+    next (err)
+  }
+}
+
+async function addToSites(req, res, next) {
+  try {
+    const fish = await Fish.findById(req.params.id);
+    fish.sites.push({name: req.body.siteName, link: req.body.siteLink})
+    console.log(fish.sites)
+    fish.save();
+    res.redirect(`/fish/${fish._id}`);
+  } catch (err) {
+    next (err)
+  }
+}
+
+async function removeFromSites(req, res, next) {
+  try {
+    // console.log(req.params.id)
+    const fish = await Fish.findById(req.params.id);
+    // console.log(req.params.idx)
+    fish.sites.splice(req.params.siteIdx,1)
     fish.save()
     res.redirect(`/fish/${fish._id}`);
   } catch (err) {

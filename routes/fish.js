@@ -26,8 +26,17 @@ router.delete('/:id', isLoggedIn, fishCtrl.delete)
 // PUT /fish/:id/allFish
 router.put('/:id/allFish', isLoggedIn, fishCtrl.addToCompatible);
 
+// PUT /fish/:id/:siteIdx
+router.put('/:id/sites', fishCtrl.addToSites)
+
+// PUT /fish/:id/:siteIdx
+router.put('/:id/sites/:siteIdx', isLoggedIn, fishCtrl.removeFromSites);
+
 // PUT /fish/:id/:idx
 router.put('/:id/:idx', isLoggedIn, fishCtrl.removeFromCompatible);
+
+
+
 
 // POST /fish
 router.post('/', isLoggedIn, fishCtrl.create)
