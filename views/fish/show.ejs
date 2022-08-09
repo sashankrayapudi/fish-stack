@@ -77,9 +77,10 @@
     <p><%= fish.userName %></p>
   </div><br>
   <a href="/fish/<%= fish._id %>/edit" style="margin-bottom: 5px;">Edit Fish Details</a>
-  <form action="/fish/<%= fish._id %>?_method=DELETE" method="POST">
+  <!-- <form action="/fish/<%= fish._id %>/delete" method="GET">
     <button type="submit">Delete this Fish</button>
-  </form>
+  </form> -->
+  <a href="/fish/<%= fish._id %>/delete">Delete this Fish</a>
   
 </section>
 

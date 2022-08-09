@@ -209,3 +209,12 @@ h1, h2 {
 a {
   color: lightcoral;
 }
+
+
+.cancel-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding-top: 5px;
+}

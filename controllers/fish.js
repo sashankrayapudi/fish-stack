@@ -12,7 +12,8 @@ module.exports = {
   addToCompatible,
   removeFromCompatible,
   addToSites,
-  removeFromSites
+  removeFromSites,
+  deletePage
 };
 
 
@@ -78,22 +79,7 @@ async function show(req, res) {
   }
 };
 
-// function show(req, res) {
-//   Fish.findById(req.params.id)
-//     .populate('compatible')
-//     .exec(function(err, fish) {
-//       Fish.find(
-//         {_id: {$nin: fish.compatible}},
-//         function(err, compatibleFish) {
-//           res.render('fish/show', {
-//             title: `${fish.name}`,
-//             compatibleFish,
-//             fish
-//           });
-//         }
-//       );
-//     });
-// }
+
 
 
 async function edit(req, res) {
@@ -174,6 +160,16 @@ async function removeFromSites(req, res, next) {
     fish.sites.splice(req.params.siteIdx,1)
     fish.save()
     res.redirect(`/fish/${fish._id}`);
+  } catch (err) {
+    next (err)
+  }
+}
+
+
+async function deletePage(req, res, next) {
+  try {
+    const fish = await Fish.findById(req.params.id);
+    res.render('fish/delete', {fish, title: "Delete Fish",});
   } catch (err) {
     next (err)
   }
