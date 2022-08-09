@@ -24,7 +24,7 @@ router.put('/:id', isLoggedIn, fishCtrl.update);
 router.delete('/:id', isLoggedIn, fishCtrl.delete);
 
 // GET /fish/:id/delete
-router.get('/:id/delete', fishCtrl.deletePage);
+router.get('/:id/delete', isLoggedIn, fishCtrl.deletePage);
 
 // PUT /fish/:id/allFish
 router.put('/:id/allFish', isLoggedIn, fishCtrl.addToCompatible);
