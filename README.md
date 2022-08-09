@@ -34,3 +34,4 @@ Add fish to your aquarium and get compatiblity info along with tank requirements
 - [x] Add Icons
 - [x] Style Error Page
 - [ ] Embedded Comments for each Fish
+- [ ] Add Profile Page for each User showing User's Fish
