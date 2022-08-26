@@ -29,7 +29,7 @@ Add fish to your aquarium and get compatiblity info along with tank requirements
 
 [Go To Fish Stack!](https://fish-stack.herokuapp)
 
-<h2 align='center'> 🐡 Technologies Used 🐡 </h2>
+<h2 align='center'> 🐡 Future Enhancements 🐡 </h2>
 
 - [x] Add My Aquarium Compatibility
 - [x] Add Section to Buy Fish
