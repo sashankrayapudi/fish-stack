@@ -10,7 +10,7 @@ Add fish to your aquarium and get compatiblity info along with tank requirements
 
 <h2 align='center'> :octopus: Technologies Used :octopus: </h2>
 
-- HTML
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 - CSS
 - Javascript
 - EJS
@@ -20,6 +20,8 @@ Add fish to your aquarium and get compatiblity info along with tank requirements
 - Mongoose
 - Bootstrap
 - Google OAuth 2.0
+
+
 
 <h2 align='center'> :shell: Getting Started :shell: </h2>
 
