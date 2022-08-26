@@ -1,4 +1,4 @@
-# Fish Stack
+# Fish Stack :fish:
 
 The All-In-One guide for your Freshwater Friends.
 
@@ -7,19 +7,21 @@ Add fish to your aquarium and get compatiblity info along with tank requirements
 
 <img src="https://i.imgur.com/myopYzM.jpg">
 
-# Technologies Used
+# Technologies Used :atom_symbol:
 
-- JavaScript
 - HTML
 - CSS
+- Javascript
+- EJS
 - Node.js
 - Express
-- EJS
+- MongoDB
+- Mongoose
 - Bootstrap
 - Google OAuth 2.0
 
 
-# Getting Started
+# Getting Started :computer:
 
 - User must be logged in with a Google account to access all of the app's functionality
 - Please only add fish to the database with all of the correct info!
@@ -33,5 +35,7 @@ Add fish to your aquarium and get compatiblity info along with tank requirements
 - [x] Add Section to Buy Fish
 - [x] Add Icons
 - [x] Style Error Page
+- [ ] Refactor Buttons to Bootstrap Buttons
+- [ ] Remove Unnecessary Inline Styling
 - [ ] Embedded Comments for each Fish
 - [ ] Add Profile Page for each User showing User's Fish
