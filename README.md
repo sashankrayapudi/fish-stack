@@ -1,4 +1,4 @@
-<h1 align='center'> :tropical_fish: Fish Stack :tropical_fish: </h1>
+<h1 align='center'> Fish Stack :tropical_fish: </h1>
 
 The All-In-One guide for your Freshwater Friends.
 
