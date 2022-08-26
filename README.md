@@ -1,4 +1,4 @@
-# Fish Stack :fish:
+# Fish Stack :tropical_fish:
 
 The All-In-One guide for your Freshwater Friends.
 
