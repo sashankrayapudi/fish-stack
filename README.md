@@ -1,4 +1,4 @@
-<h1 align='center'> Fish Stack :tropical_fish: </h1>
+<h1 align='center'> :tropical_fish: Fish Stack :tropical_fish: </h1>
 
 The All-In-One guide for your Freshwater Friends.
 
@@ -29,7 +29,7 @@ Add fish to your aquarium and get compatiblity info along with tank requirements
 
 [Go To Fish Stack!](https://fish-stack.herokuapp)
 
-<h2 align='center'> 🐡: Technologies Used 🐡: </h2>
+<h2 align='center'> 🐡 Technologies Used 🐡 </h2>
 
 - [x] Add My Aquarium Compatibility
 - [x] Add Section to Buy Fish
