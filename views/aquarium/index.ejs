@@ -5,9 +5,16 @@
 <% if (aquarium.fishList.length) { %>
   <% aquarium.fishList.forEach(function(fish, idx) { %>
     <article>
-      <p><%= fish.name %> <img src="<%= fish.image %>" alt="Fish Image" style="width:100px"></p>
+      <div class="d-flex justify-content-center">
+        <h5><%= fish.name %> </h5>
+      </div>
+      <div class="d-flex justify-content-center">
+        <img src="<%= fish.image %>" alt="Fish Image" style="width:150px">
+      </div>
       <form action="/aquarium/<%= idx %>?_method=PUT" method="POST" style="text-align: right;">
-        <button type="submit" >Remove</button>
+        <div class="d-flex justify-content-center">
+          <button type="submit" class="btn btn-sm btn-outline-danger m-2" >Remove</button>
+        </div>
       </form>
       <hr>
     </article>

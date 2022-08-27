@@ -26,7 +26,12 @@
         <td><%= f.name %></td>
         <td><%= f.description %></td>
         <td><img class="fish-image-index" src="<%= f.image %>" alt="Image of <%= f.name %>"></td>
-        <td><a href="/fish/<%= f._id %>">DETAILS</a></td>
+        <!-- <td><a href="/fish/<%= f._id %>">DETAILS</a></td> -->
+        <td>
+          <form action="/fish/<%= f._id %>" method="GET">
+            <button class="btn btn-outline-dark">DETAILS</button>
+          </form>
+        </td>
       </tr>
     <% }); %>
     </tbody>

@@ -21,13 +21,13 @@
       <p style="color: lightcoral;"">None</p>
     <% } %>
   </ul>
-  <form id="add-to-compatible" action="/fish/<%= fish._id %>/allFish?_method=PUT" method="POST">
-    <select name="fishId">
+  <form id="add-to-compatible" action="/fish/<%= fish._id %>/allFish?_method=PUT" method="POST" class="">
+    <select name="fishId" class="form-select form-select-sm">
       <%- allFish.map(f => 
         `<option value="${f._id}">${f.name}</option>`
       ).join('') %>
     </select>
-    <button type="submit">Add to List of Compatible Fish</button>
+    <button type="submit" class="btn btn-outline-success btn-sm m-2">Add to List of Compatible Fish</button>
   </form>
 
 
@@ -52,9 +52,11 @@
   </ul>
 
   <form id="add-to-sites" action="/fish/<%= fish._id %>/sites?_method=PUT" method="POST">
-    <input type="text" name="siteName" placeholder="Name Here" size="10">
-    <input type="text" name="siteLink" placeholder="Link Here" size="15">
-    <button type="submit">Add to List of Stores</button>
+    <div class="input-group input-group-sm">
+      <input type="text" name="siteName" placeholder="Name Here" class="form-control">
+      <input type="text" name="siteLink" placeholder="Link Here" class="form-control">
+      <button type="submit" class="btn btn-outline-success btn-sm m-2">Add to List of Stores</button>
+    </div>
   </form>
 
   <hr>
@@ -62,9 +64,11 @@
 
 
   <form id="add-to-tank" action="/aquarium/fish/<%= fish._id %>?_method=PUT" method="POST">
-    <label>Quantity:</label>&nbsp;&nbsp;
-    <input placeholder="QTY" name="quantity" type="number" min="1" value=1><br>&nbsp;&nbsp;
-    <button type="submit">Add <%= fish.name %> to my Aquarium</button>
+    <div class="input-group input-group-sm">
+      <label>Quantity:</label>&nbsp;&nbsp;
+      <input placeholder="QTY" name="quantity" type="number" min="1" value=1 class="form-control"><br>&nbsp;&nbsp;
+      <button type="submit" class="btn btn-outline-info btn-sm">Add <%= fish.name %> to my Aquarium</button>
+    </div>
   </form>
   <br>
 
@@ -76,11 +80,14 @@
     <img src="<%= fish.userAvatar %>" alt="avatar" referrerpolicy="no-referrer">&nbsp;
     <p><%= fish.userName %></p>
   </div><br>
-  <a href="/fish/<%= fish._id %>/edit" style="margin-bottom: 5px;">Edit Fish Details</a>
-  <!-- <form action="/fish/<%= fish._id %>/delete" method="GET">
-    <button type="submit">Delete this Fish</button>
-  </form> -->
-  <a href="/fish/<%= fish._id %>/delete">Delete this Fish</a>
+  <form action="/fish/<%= fish._id %>/edit" method="GET">
+    <button class="btn btn-warning m-1">Edit Fish Details</button>
+  </form>
+
+  <form action="/fish/<%= fish._id %>/delete" method="GET">
+    <button type="submit" class="btn btn-danger m-1">Delete this Fish</button>
+  </form>
+
   
 </section>
 

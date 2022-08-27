@@ -30,7 +30,7 @@ header {
 
 body > nav {
   grid-area: nav;
-  background-color:grey;
+  background-color: rosybrown;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -41,7 +41,7 @@ body > nav {
 
 #categories-nav {
   grid-area: nav;
-  background-color: #B8C0C2;
+  background-color: saddlebrown;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -66,7 +66,7 @@ nav > a {
 
 #categories-nav > a {
   margin: 10px;
-  color: rgb(41, 157, 234)
+  color: black
 }
 
 
@@ -211,10 +211,3 @@ a {
 }
 
 
-.cancel-button {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  padding-top: 5px;
-}

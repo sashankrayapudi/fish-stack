@@ -2,27 +2,29 @@
 
 <h1 style="text-align: center;"><%= title %></h1>
 
-<form id="edit-form" action="/fish/<%= fish._id %>?_method=PUT" method="POST">
-  <label>Name:</label>
-  <input type="text" name="name" value="<%= fish.name %>"><br>
-  <label>Image URL (imgur):</label>
-  <input type="text" name="image" value="<%= fish.image %>"><br>
-  <label>Description:</label>
-  <input type="text" name="description" value="<%= fish.description %>"><br>
-  <label>Tank Type:</label>
-  <select name="category">
-    <% validCategories.forEach(function(category, idx) { %>
-      <option value="<%= category %>">
-          <%= category %>
-      </option>
-    <% }) %>
-  </select><br>
-  <!-- <label>Comptabile Fish (separate fish with commas):</label>
-  <input type="text" name="comptabile" value="<%= fish.compatible %>"><br> -->
-  <label>Gallons per Fish:</label>
-  <input type="text" name="galPerFish" value="<%= fish.galPerFish %>"><br>
-  <input type="submit" value="Update Fish">
-</form>
+<div class="d-flex input-group justify-content-center">
+  <form id="edit-form" action="/fish/<%= fish._id %>?_method=PUT" method="POST">
+    <label>Name:</label>
+    <input type="text" name="name" value="<%= fish.name %>" class="form-control"><br>
+    <label>Image URL (imgur):</label>
+    <input type="text" name="image" value="<%= fish.image %>" class="form-control"><br>
+    <label>Description:</label>
+    <input type="text" name="description" value="<%= fish.description %>" class="form-control"><br>
+    <label>Tank Type:</label>
+    <select name="category" class="form-select">
+      <% validCategories.forEach(function(category, idx) { %>
+        <option value="<%= category %>">
+            <%= category %>
+        </option>
+      <% }) %>
+    </select><br>
+    <!-- <label>Comptabile Fish (separate fish with commas):</label>
+    <input type="text" name="comptabile" value="<%= fish.compatible %>"><br> -->
+    <label>Gallons per Fish:</label>
+    <input type="text" name="galPerFish" value="<%= fish.galPerFish %>" class="form-control"><br>
+    <input type="submit" value="Update Fish" class="btn btn-outline-warning">
+  </form>
+</div>
 
 <img src="/images/edit.jpg" alt="fish styles" style="width: 45%;display:block;margin-left: auto;margin-right: auto;margin-top: 60px;">
 <!-- <a href='https://www.freepik.com/vectors/small-fish'>Small fish vector created by vextok - www.freepik.com</a> -->

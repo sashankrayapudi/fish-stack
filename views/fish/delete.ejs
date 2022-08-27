@@ -1,16 +1,21 @@
 <%- include('../partials/header') %>
 
 <section style="background-color: rgb(210, 157, 244);">
-  <h1 style="color: black;text-align: center;">Delete Fish</h1>
+  <!-- <h1 style="color: black;text-align: center;">Delete Fish</h1> -->
 
-  <h4 style="color: black;text-align: center;" >Are you sure you want to delete <span style="color: blue" ><%= fish.name %></span> from the database?</h4>
-  <form action="/fish/<%= fish._id %>?_method=DELETE" method="POST">
-    <button type="submit" style="display: block;margin-left: auto;margin-right: auto;margin-top: 15px;">Delete this Fish</button>
-    <a href="/fish/<%= fish.id %>" class="cancel-button" style="color: blue;">Cancel</a>
-    
+  <h2 style="color: black;text-align: center;" >Are you sure you want to delete <span style="color: navy" ><%= fish.name %></span> from the database?</h2>
+  <form action="/fish/<%= fish._id %>?_method=DELETE" method="POST" class="d-flex justify-content-center">
+    <button type="submit" class="btn btn-danger m-1" >Delete this Fish</button>
+    <form action="/fish/<%= fish.id %>" method="GET">
+      <button class="btn btn-primary m-1">Cancel</button>
+    </form>
   </form>
 
   <img src="/images/error.webp" id="diver-img" alt="cute diver" style="display: block;margin-left: auto;margin-right: auto;">
 </section>
 
 <%- include('../partials/footer') %>
+
+
+
+<!-- style="display: block;margin-left: auto;margin-right: auto;margin-top: 15px;" -->
