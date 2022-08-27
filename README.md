@@ -1,6 +1,7 @@
 <h1 align='center'> :tropical_fish: Fish Stack :tropical_fish: </h1>
 
-<p align='center'> The All-in-One Guide for your freshwater friends. Add fish to your aquarium and get compatiblity info along with tank requirements!</p>
+<p align='center'> The All-in-One Guide for your freshwater friends. </p>
+<p align='center'> Add fish to your aquarium and get compatibility info along with tank requirements!</p>
 
 
 <h2 align='center'> :dolphin: Screenshots :dolphin: </h2>
