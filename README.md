@@ -5,7 +5,7 @@ The All-In-One guide for your Freshwater Friends.
 Add fish to your aquarium and get compatiblity info along with tank requirements!
 
 
-<img src="https://i.imgur.com/myopYzM.jpg">
+| | | |
 
 
 <h2 align='center'> :octopus: Technologies Used :octopus: </h2>
