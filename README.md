@@ -5,6 +5,7 @@ The All-In-One guide for your Freshwater Friends.
 Add fish to your aquarium and get compatiblity info along with tank requirements!
 
 
+<h2 align='center'> :dolphin: Screenshots :dolphin: </h2>
 |  |  |
 |---|---|
 | **HOME** | **ALL FISH** |
@@ -24,9 +25,8 @@ Add fish to your aquarium and get compatiblity info along with tank requirements
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 ![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
-- EJS
-- Mongoose
-- Google OAuth 2.0
+![Google](https://img.shields.io/badge/google-4285F4?style=for-the-badge&logo=google&logoColor=white)
+
 
 
 
