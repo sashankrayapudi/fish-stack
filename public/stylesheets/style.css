@@ -66,14 +66,18 @@ nav > a {
 
 #categories-nav > a {
   margin: 10px;
-  color: black
+  color: black;
 }
 
 
-
-nav > a:hover:not(.active), #categories-nav > a:hover:not(.active) {
+nav > a:hover:not(.active) {
   color: white;
-  background-color: #424748;
+  background-color: saddlebrown;
+}
+
+#categories-nav > a:hover:not(.active) {
+  color: white;
+  background-color: rosybrown;
 }
 
 nav > a.active, #categories-nav > a.active {
