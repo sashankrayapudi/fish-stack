@@ -9,9 +9,9 @@ Add fish to your aquarium and get compatiblity info along with tank requirements
 |  |  |
 |---|---|
 | **HOME** | **ALL FISH** |
-| <img src="https://i.imgur.com/1anOwrL.jpg"> | <img src="https://i.imgur.com/D94PH6c.png"> |
-| **AQUARIUM** | **ADD FISH** | 
-| <img src="https://i.imgur.com/5ms6T5m.jpg"> | <img src="https://i.imgur.com/nBquvAB.png"> |
+| <img src="https://i.imgur.com/ocpTSfd.jpg"> | <img src="https://i.imgur.com/MbBJSf6.png"> |
+| **AQUARIUM** | **DELETE CONFIRMATION** | 
+| <img src="https://i.imgur.com/44T4MAe.png"> | <img src="https://i.imgur.com/G6HNz7d.png"> |
 
 
 
