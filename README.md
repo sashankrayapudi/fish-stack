@@ -5,7 +5,8 @@ The All-In-One guide for your Freshwater Friends.
 Add fish to your aquarium and get compatiblity info along with tank requirements!
 
 
-
+|  |  |
+|---|---|
 | **HOME** | **ALL FISH** |
 | <img src="https://i.imgur.com/ocpTSfd.jpg"> | <img src="https://i.imgur.com/MbBJSf6.png"> |
 | **AQUARIUM** | **DELETE CONFIRMATION** | 
