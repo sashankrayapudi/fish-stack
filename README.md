@@ -44,7 +44,7 @@
 - [x] Add Section to Buy Fish
 - [x] Add Icons
 - [x] Style Error Page
-- [ ] Refactor Buttons to Bootstrap Buttons
+- [x] Refactor Buttons and Input to Bootstrap
 - [ ] Remove Unnecessary Inline Styling
 - [ ] Embedded Comments for each Fish
 - [ ] Add Profile Page for each User showing User's Fish
