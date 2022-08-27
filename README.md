@@ -6,12 +6,12 @@ Add fish to your aquarium and get compatiblity info along with tank requirements
 
 
 
-|  |  |  |
-|---|---|---|
-| **HOME** | **ALL FISH** | **FISH DETAIL** |
-| <img src="https://i.imgur.com/1anOwrL.jpg"> | <img src="https://i.imgur.com/D94PH6c.png"> | <img src="https://i.imgur.com/tBxdgIl.png"> |
-| **AQUARIUM** | **ADD FISH** | **DELETE CONFIRMATION** |
-| <img src="https://i.imgur.com/5ms6T5m.jpg"> | <img src="https://i.imgur.com/nBquvAB.png"> | <img src="https://i.imgur.com/dG9Rhqc.png"> |
+|  |  |
+|---|---|
+| **HOME** | **ALL FISH** |
+| <img src="https://i.imgur.com/1anOwrL.jpg"> | <img src="https://i.imgur.com/D94PH6c.png"> |
+| **AQUARIUM** | **ADD FISH** | 
+| <img src="https://i.imgur.com/5ms6T5m.jpg"> | <img src="https://i.imgur.com/nBquvAB.png"> |
 
 
 
