@@ -36,7 +36,7 @@
 - Please only add fish to the database with all of the correct info!
 - When adding compatible fish, keep in mind that some fish can can co-exist with their own kind (e.g. Goldfish) while others cannot (e.g. Flowerhorn, Male Bettas)
 
-[Go To Fish Stack!](https://fish-stack.herokuapp)
+[Go To Fish Stack!](https://fish-stack.herokuapp.com)
 
 <h2 align='center'> 🐡 Future Enhancements 🐡 </h2>
 
