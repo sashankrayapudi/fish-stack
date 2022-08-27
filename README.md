@@ -6,6 +6,7 @@ Add fish to your aquarium and get compatiblity info along with tank requirements
 
 
 <h2 align='center'> :dolphin: Screenshots :dolphin: </h2>
+
 |  |  |
 |---|---|
 | **HOME** | **ALL FISH** |
